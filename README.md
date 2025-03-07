@@ -53,5 +53,8 @@
     ログイン機能では、Google Sign-In APIを使用することでGoogleアカウントで簡単にログイン・認証が可能になるのではないかと考えています。\
     Firebase Firestoreを使用することができれば、行動記録機能における時間や行動(場所)、詳細(詳細から待ち時間等が見られる)などのポストを時間順で投稿されていく形にできるのではないかと考えています。
 
+# 画面遷移図リンク
+   https://www.figma.com/design/trtpnAUsImDhKtrbkc9iks/RUNTEQ_graduation_work?node-id=6-2&p=f&t=Fs9xCDp8wZqZEr30-0
+
 # ER図画像リンク
    https://i.gyazo.com/7405bf2af0f8486f945cbebd7ed2ac40.png
