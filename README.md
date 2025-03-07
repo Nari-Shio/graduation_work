@@ -56,5 +56,5 @@
 # 画面遷移図リンク
    https://www.figma.com/design/trtpnAUsImDhKtrbkc9iks/RUNTEQ_graduation_work?node-id=6-2&p=f&t=Fs9xCDp8wZqZEr30-0
 
-# ER図画像リンク
+# ER図リンク
    https://i.gyazo.com/7405bf2af0f8486f945cbebd7ed2ac40.png
