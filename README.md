@@ -57,4 +57,4 @@
    https://www.figma.com/design/trtpnAUsImDhKtrbkc9iks/RUNTEQ_graduation_work?node-id=6-2&p=f&t=Fs9xCDp8wZqZEr30-0
 
 # ER図リンク
-   https://i.gyazo.com/7405bf2af0f8486f945cbebd7ed2ac40.png
+   https://i.gyazo.com/3e2a182b5644eac7c5e130d9cf350221.png
