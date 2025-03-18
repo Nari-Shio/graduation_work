@@ -11,5 +11,13 @@
 
   <body>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "本当にログアウトしますか？" }, class: "text-red-500 hover:underline" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "text-blue-500 hover:underline" %>
+    <% end %>
   </body>
 </html>
