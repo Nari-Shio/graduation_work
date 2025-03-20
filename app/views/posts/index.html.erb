@@ -1,0 +1,16 @@
+<h1>投稿一覧ページ</h1>
+
+<p>こんにちは、<%= current_user.email %> さん！</p>
+
+<!-- 新規投稿ボタン -->
+<p><%= link_to '新規投稿', new_post_path, class: 'btn btn-primary' %></p>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li class="border-b py-4">
+      <strong>日付：</strong><%= post.date.strftime('%Y-%m-%d') if post.date %><br>
+      <strong>場所：</strong><%= post.place %><br>
+      <p><strong>メモ：</strong><%= post.memo.truncate(50) %></p>
+    </li>
+  <% end %>
+</ul>
