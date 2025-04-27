@@ -2,6 +2,7 @@
   <div class="flex justify-between items-center">
     <h1 class="text-2xl font-bold mb-6 text-center">投稿詳細</h1>
 
+<<<<<<< HEAD
     <%= form_with url: post_bookmark_path(@post), method: :post, local: true do %>
       <button type="submit" id="bookmark-btn" class="block p-2 rounded-full bg-white shadow hover:shadow-lg transition-all duration-200">
         <span id="bookmark-icon" class="text-3xl <%= @bookmark_exists ? 'text-red-500' : 'text-gray-400' %> hover:text-red-500">
@@ -9,7 +10,6 @@
         </span>
       </button>
     <% end %>
-
   </div>
 
   <% if @post.image.present? %>
@@ -48,6 +48,7 @@
     <div>
       <%= link_to '戻る', posts_path, class: "inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600" %>
     </div>
+<<<<<<< HEAD
 
     <% if @post.user == current_user %>
       <div>
@@ -55,5 +56,11 @@
         <%= link_to '削除', post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "px-4 py-2 bg-red-600 text-white rounded shadow-md hover:bg-red-700" %>
       </div>
     <% end %>  
+=======
+    <div>
+      <%= link_to '編集', edit_post_path(@post), class: "px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mr-2" %>
+      <%= link_to '削除', post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "px-4 py-2 bg-red-600 text-white rounded shadow-md hover:bg-red-700" %>
+    </div>
+>>>>>>> 8f5d7c0 (コミットメッセージ)
   </div>
 </div> 

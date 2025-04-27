@@ -40,6 +40,7 @@ class ActionLogsController < ApplicationController
   end
 
   def destroy
+<<<<<<< HEAD
     @post = Post.find(params[:post_id])
     @action_log = @post.action_logs.find(params[:id])
     @action_log.destroy
@@ -53,6 +54,7 @@ class ActionLogsController < ApplicationController
   end
 
   def set_post
+<<<<<<< HEAD
     @post = Post.find(params[:post_id]) if params[:post_id]
   end
 

@@ -1,4 +1,5 @@
 document.addEventListener("turbo:load", () => {
+<<<<<<< HEAD
   const addActionLogButton = document.getElementById("add-action-log");
   const container = document.getElementById("action-logs");
 
@@ -41,5 +42,5 @@ document.addEventListener("turbo:load", () => {
         logContainer.remove();
       }
     }
-  });
+  });          
 });

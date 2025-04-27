@@ -1,7 +1,7 @@
 <h1 class="text-center text-2xl font-bold mb-6">新規投稿</h1>
 
 <div class="max-w-md mx-auto bg-white p-8 rounded shadow">
-  <%= form_with(model: @post, local: true) do |form| %>
+  <%= form_with(model: @post, local: true, data: { turbo: false }) do |form| %>
     <% if @post.errors.any? %>
       <div class="text-red-500 mb-4">
         <h2>エラーがあります:</h2>
@@ -14,8 +14,13 @@
     <% end %>
 
     <div class="mb-4">
+<<<<<<< HEAD
       <%= form.label :image, "画像", class: "block text-gray-700 font-semibold mb-2" %>
       <%= form.file_field :image, class: "w-full border-gray-300 rounded px-3 py-2" %>
+=======
+      <%= f.label :image, "画像", class: "block text-gray-700 font-semibold mb-2" %>
+      <%= f.file_field :image, class: "w-full border-gray-300 rounded px-3 py-2" %>
+>>>>>>> 8f5d7c0 (コミットメッセージ)
     </div>
 
     <div class="mb-4">
@@ -82,6 +87,7 @@
       <% end %>
     </div>
 
+<<<<<<< HEAD
     <button type="button" id="add-action-log" class="mt-4 p-2 bg-blue-500 text-white rounded">行動を追加</button>
   
     <div class="mb-4">
