@@ -1,0 +1,26 @@
+
+<h1 class="text-center text-2xl font-bold mb-6">行動記録編集</h1>
+
+<div class="max-w-md mx-auto bg-white p-8 rounded shadow">
+  <%= form_with model: [@post, @action_log], local: true do |form| %>
+    <div class="mb-6 p-4 border rounded bg-gray-50">
+      <%= form.label :created_at, "時間" %>
+      <%= form.time_field :created_at, value: @action_log.created_at&.strftime('%H:%M'), class: "border p-2 w-full" %>
+
+      <%= form.label :place, "場所" %>
+      <%= form.text_field :place, class: "border p-2 w-full" %>
+
+      <%= form.label :category, "行動の種類" %>
+      <%= form.text_field :category, class: "border p-2 w-full" %>
+
+      <%= form.label :memo, "詳細" %>
+      <%= form.text_area :memo, rows: 3, class: "border p-2 w-full" %>
+
+      <div class="mt-4 flex justify-between">
+        <%= form.submit "更新", class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+
+        <%= link_to "削除", post_action_log_path(@post, @action_log), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700" %>
+      </div>
+    </div>
+  <% end %>
+</div>

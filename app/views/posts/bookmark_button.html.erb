@@ -1,0 +1,13 @@
+<div id="bookmark-button" class="absolute top-0 right-0 m-4">
+  <% if current_user.bookmarks.exists?(post_id: post.id) %>
+    <%= button_to 'ブックマーク解除', post_bookmark_path(post), 
+          method: :delete, remote: true, 
+          id: "bookmark-icon",
+          class: "bg-red-500 text-white px-4 py-2 rounded" %>
+  <% else %>
+    <%= button_to 'ブックマークする', post_bookmark_path(post), 
+          method: :post, remote: true, 
+          id: "bookmark-icon",
+          class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+  <% end %>
+</div>

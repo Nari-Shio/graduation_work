@@ -1,0 +1,80 @@
+<div class="max-w-md mx-auto bg-white p-8 rounded shadow">
+  <h1 class="text-2xl font-bold mb-6 text-center">投稿を編集</h1>
+
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="mb-4">
+      <%= f.label :image, "画像", class: "block text-gray-700 font-semibold mb-2" %>
+      <%= f.file_field :image, class: "w-full border-gray-300 rounded px-3 py-2" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :date, '日付', class: 'block text-gray-700 font-semibold mb-2' %>
+      <%= f.date_field :date, class: 'w-full border-gray-300 rounded px-3 py-2' %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :place, '場所', class: 'block text-gray-700 font-semibold mb-2' %>
+      <%= f.text_field :place, class: 'w-full border-gray-300 rounded px-3 py-2' %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :category, '目的', class: "block mb-1 font-semibold" %>
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center">
+          <%= f.radio_button :category, 'イベント' %>
+          <%= f.label :category_イベント, 'イベント' %>
+        </div>
+
+        <div class="flex items-center">
+          <%= f.radio_button :category, 'アトラクション' %>
+          <%= f.label :category_アトラクション, 'アトラクション' %>
+        </div>
+
+        <div class="flex items-center">
+          <%= f.radio_button :category, 'ショー' %>
+          <%= f.label :category_ショー, 'ショー' %>
+        </div>
+
+        <div class="flex items-center">
+          <%= f.radio_button :category, 'フード' %>
+          <%= f.label :category_フード, 'フード' %>
+        </div>
+
+        <div class="flex items-center">
+          <%= f.radio_button :category, 'その他' %>
+          <%= f.label :category_その他, 'その他' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <h2 class="text-xl font-semibold mb-2 border-b pb-2">行動ログ</h2>
+     
+      <% @post.action_logs.each_with_index do |log, index| %>
+        <div class="bg-white p-4 rounded-lg shadow-md mb-4 border border-gray-200">
+          <p><strong> 時間：</strong> <%= log.created_at.strftime('%H:%M') if log.created_at.present? %></p>
+          <p><strong> 場所：</strong> <%= log.place %></p>
+          <p><strong> 行動の種類：</strong> <%= log.category %></p>
+          <p><strong> 詳細：</strong> <%= log.memo %></p>
+        
+          <div class="mt-3 flex flex-wrap gap-4">
+            <%= link_to "行動記録を編集", edit_post_action_log_path(@post, log), class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" %>
+            <% if index == @post.action_logs.size - 1 %>
+              <%= link_to "行動記録を追加", new_post_action_log_path(@post), class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mb-6 mt-6">
+      <%= f.label :memo, 'メモ', class: 'block text-gray-700 font-semibold mb-2' %>
+      <%= f.text_area :memo, rows: 6, class: 'w-full border-gray-300 rounded px-3 py-2' %>
+    </div>
+
+    <div class="flex flex-wrap gap-4">
+      <%= link_to 'キャンセル', post_path(@post), class: 'px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600' %>
+      <%= f.submit '更新する', class: 'px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600' %>
+    </div>
+  <% end %>
+</div>
