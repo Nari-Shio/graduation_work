@@ -2,11 +2,14 @@
   <div class="flex justify-between items-center">
     <h1 class="text-2xl font-bold mb-6 text-center">投稿詳細</h1>
 
-    <%= link_to post_bookmark_path(@post), method: @bookmark_exists ? :delete : :post, remote: true, id: "bookmark-btn", class: "block p-2 rounded-full bg-white shadow hover:shadow-lg transition-all duration-200" do %>
-      <span id="bookmark-icon" class="text-3xl <%= @bookmark_exists ? 'text-red-500' : 'text-gray-400' %> hover:text-red-500">
-        <%= @bookmark_exists ? '❤️' : '🤍' %>
-      </span>
+    <%= form_with url: post_bookmark_path(@post), method: :post, local: true do %>
+      <button type="submit" id="bookmark-btn" class="block p-2 rounded-full bg-white shadow hover:shadow-lg transition-all duration-200">
+        <span id="bookmark-icon" class="text-3xl <%= @bookmark_exists ? 'text-red-500' : 'text-gray-400' %> hover:text-red-500">
+          <%= @bookmark_exists ? '❤️' : '🤍' %>
+        </span>
+      </button>
     <% end %>
+
   </div>
 
   <% if @post.image.present? %>

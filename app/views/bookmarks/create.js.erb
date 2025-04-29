@@ -1,9 +1,3 @@
 document.getElementById("bookmark-icon").innerText = "❤️";
 document.getElementById("bookmark-icon").classList.remove("text-gray-400");
 document.getElementById("bookmark-icon").classList.add("text-red-500");
-
-document.getElementById("bookmark-button").innerHTML = `
-  <button id="bookmark-icon" class="bg-red-500 text-white px-4 py-2 rounded" data-remote="true" data-method="delete" href="/posts/<%= @post.id %>/bookmark">
-    ブックマーク解除
-  </button>
-`;

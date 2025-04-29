@@ -8,10 +8,13 @@ class BookmarksController < ApplicationController
 
     def create
       post = Post.find(params[:post_id])
-      current_user.bookmarks.create(post: post)
+      unless current_user.bookmarks.exists?(post_id: post.id)
+        current_user.bookmarks.create(post: post)
+      end
       respond_to do |format|
         format.html { redirect_to request.referer, notice: 'ブックマークしました！' }
         format.js
+        format.turbo_stream
       end
     end
 
@@ -21,6 +24,7 @@ class BookmarksController < ApplicationController
       respond_to do |format|
         format.html { redirect_to request.referer, notice: 'ブックマークを解除しました！' }
         format.js
+        format.turbo_stream
       end
     end
     

@@ -19,7 +19,7 @@
         <%= link_to '新規投稿', new_post_path, class: 'block text-blue-500 hover:underline mb-4' %>
         <%= link_to '検索', search_path, class: 'block text-blue-500 hover:underline mb-4' %>
         <%= link_to 'ブックマーク一覧', bookmarks_path, class: 'block text-blue-500 hover:underline mb-4' %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { turbo: false, confirm: "本当にログアウトしますか？" }, class: 'block text-red-500 hover:underline mb-4' %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "本当にログアウトしますか？" }, class: 'block text-red-500 hover:underline mb-4' %>
       </div>
 
       <div class="flex-1 flex flex-col pl-0 peer-checked:pl-64 transition-all duration-300">
