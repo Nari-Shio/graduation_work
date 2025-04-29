@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'search', to: 'searches#index', as: :search
   devise_for :users
   root 'home#index'
+  
   resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resource :bookmark, only: [:create, :destroy]
     resources :action_logs, only: [:new, :create, :edit, :update]
