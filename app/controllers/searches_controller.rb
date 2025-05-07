@@ -3,7 +3,7 @@ class SearchesController < ApplicationController
     @posts = Post.all
 
     if params[:keyword].present?
-      @posts = @posts.where("title LIKE :keyword OR memo LIKE :keyword", keyword: "%#{params[:keyword]}%")
+      @posts = @posts.where("place LIKE :keyword OR memo LIKE :keyword", keyword: "%#{params[:keyword]}%")
     end
 
     if params[:category].present?
