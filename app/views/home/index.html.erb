@@ -8,12 +8,15 @@
   </head>
   <body class="bg-gray-100 text-gray-900">
 
-    <header class="bg-yellow-400 p-6 text-center text-2xl font-bold">
-      アプリ名
+    <header class="p-6 text-center text-3xl font-bold shadow-lg bg-yellow-400 text-white">
+      Alone-D-Record
     </header>
 
     <section class="text-center my-8">
-      <h2 class="text-lg font-semibold">映えやいいねを気にせず自分の1人ディズニーの思い出を残すことができます</h2>
+      <h2 class="text-2xl font-semibold text-100">映えやいいねを気にせず自分の1人ディズニーの思い出を残すことができます</h2>
+      <div class="mt-6">
+        <%= image_tag "sample-image.png", alt: "1人ディズニーのイメージ", class: "mx-auto rounded-lg shadow-lg w-full max-w-full" %>
+      </div>
     </section>
 
     <section class="flex justify-center my-6">
@@ -29,6 +32,5 @@
       <%= link_to "ログイン", new_user_session_path, class: "bg-green-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-green-700 transition" %>
     </section>
 
-    <footer class="bg-gray-800 text-white text-center p-4 mt-8"></footer>
   </body>
 </html>

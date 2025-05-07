@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        date: 日付
+        place: 場所
+        memo: メモ
+        image: 画像
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      blank: "を入力してください"
+      too_long: "は%{count}文字以内で入力してください"
+      too_short: "は%{count}文字以上で入力してください"
+      invalid: "は不正な値です"

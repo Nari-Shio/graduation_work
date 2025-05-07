@@ -40,8 +40,10 @@ class ActionLogsController < ApplicationController
   end
 
   def destroy
-     @action_log.destroy
-    redirect_to action_logs_path, notice: "行動記録を削除しました。"
+    @post = Post.find(params[:post_id])
+    @action_log = @post.action_logs.find(params[:id])
+    @action_log.destroy
+    redirect_to edit_post_path(@post), notice: "行動記録を削除しました。"
   end
 
   private
@@ -51,7 +53,7 @@ class ActionLogsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:post_id]) if params[:post_id] # `post_id` を取得
+    @post = Post.find(params[:post_id]) if params[:post_id]
   end
 
   def action_log_params

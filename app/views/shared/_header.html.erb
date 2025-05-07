@@ -1,7 +1,6 @@
-<header>
-  <nav class="navbar navbar-light bg-light p-3">
-    <%= link_to root_path, class: 'navbar-brand' do %>
-      <%= image_tag 'logo.png', alt: 'Alone-D-Record ロゴ', height: '40' %>
-    <% end %>
-  </nav>
+<header class="p-4 shadow flex justify-between items-center" style="background-color: #ebf8ff;">
+  <%= link_to root_path, class: "text-2xl font-bold text-gray-700" do %>
+    Alone-D-Record
+  <% end %>
+  <label for="sidebar-toggle" class="text-gray-700 text-2xl cursor-pointer ml-auto">&#9776;</label>
 </header>

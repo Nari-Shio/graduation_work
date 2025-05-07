@@ -12,33 +12,28 @@
 
   <body class="h-screen">
     <div class="flex h-full">
-      <input type="checkbox" id="sidebar-toggle" class="hidden peer" />
-      <div class="peer-checked:translate-x-0 -translate-x-full transition-transform duration-300 fixed top-0 left-0 w-64 h-full bg-gray-200 p-6 z-50">
-      <h2 class="text-xl font-bold mb-6">メニュー</h2>
-        <%= link_to '投稿一覧', posts_path, class: 'block text-blue-500 hover:underline mb-4' %>
-        <%= link_to '新規投稿', new_post_path, class: 'block text-blue-500 hover:underline mb-4' %>
-        <%= link_to '検索', search_path, class: 'block text-blue-500 hover:underline mb-4' %>
-        <%= link_to 'ブックマーク一覧', bookmarks_path, class: 'block text-blue-500 hover:underline mb-4' %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "本当にログアウトしますか？" }, class: 'block text-red-500 hover:underline mb-4' %>
-      </div>
+      <% unless controller_name == "sessions" || controller_name == "home" || controller_name == "registrations" %>
+        <input type="checkbox" id="sidebar-toggle" class="hidden peer" />
+        <div class="peer-checked:translate-x-0 -translate-x-full transition-transform duration-300 fixed top-0 left-0 w-64 h-full bg-gray-200 p-6 z-50">
+          <h2 class="text-xl font-bold mb-6">メニュー</h2>
+          <%= link_to '投稿一覧', posts_path, class: 'block text-blue-500 hover:underline mb-4' %>
+          <%= link_to '新規投稿', new_post_path, class: 'block text-blue-500 hover:underline mb-4' %>
+          <%= link_to '検索', search_path, class: 'block text-blue-500 hover:underline mb-4' %>
+          <%= link_to 'ブックマーク一覧', bookmarks_path, class: 'block text-blue-500 hover:underline mb-4' %>
+          <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: "本当にログアウトしますか？" }, class: 'block text-red-500 hover:underline mb-4' %>
+        </div>
+      <% end %>
 
       <div class="flex-1 flex flex-col pl-0 peer-checked:pl-64 transition-all duration-300">
-        <header class="bg-gray-100 p-4 shadow flex justify-between items-center">
-          <%= link_to root_path, class: "text-2xl font-bold text-gray-700" do %>
-            Alone-D-Record
-          <% end %>
-          <label for="sidebar-toggle" class="text-gray-700 text-2xl cursor-pointer ml-auto">&#9776;</label>
-        </header>
+          <%= render 'shared/header' %>
 
         <main class="h-full p-8 bg-white overflow-auto">
           <%= yield %>
           <p class="notice text-green-600 mt-4"><%= notice %></p>
           <p class="alert text-red-600 mt-2"><%= alert %></p>
         </main>
-        <footer class="bg-gray-100 p-4 text-center text-gray-500">
-          &copy; 2025 Alone-D-Record All Rights Reserved.
-        </footer>
+          <%= render 'shared/footer' %>
       </div>
-    </div> 
+    </div>
   </body>
 </html>
