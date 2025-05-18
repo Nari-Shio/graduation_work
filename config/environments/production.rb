@@ -94,4 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.hosts << "graduation-work-fyow.onrender.com"
+  config.hosts << "graduate-work-fyow.onrender.com"
 end
