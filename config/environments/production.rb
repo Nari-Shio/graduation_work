@@ -95,4 +95,7 @@ Rails.application.configure do
 
   config.hosts << "graduation-work-fyow.onrender.com"
   config.hosts << "graduate-work-fyow.onrender.com"
+
+  config.hosts << "graduation-work-3h7b.onrender.com"
+
 end
