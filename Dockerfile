@@ -14,5 +14,13 @@ RUN bundle install
 # アプリのファイルをすべてコピー
 COPY . .
 
+# 環境変数の設定（デフォルトは production）
+ENV RAILS_ENV=production
+ENV RAILS_SERVE_STATIC_FILES=true
+ENV RAILS_LOG_TO_STDOUT=true
+
+# アセットのプリコンパイル
+RUN bundle exec rake assets:precompile
+
 # サーバーを起動
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
