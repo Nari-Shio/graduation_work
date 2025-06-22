@@ -97,5 +97,5 @@ Rails.application.configure do
   config.hosts << "graduate-work-fyow.onrender.com"
 
   config.hosts << "graduation-work-3h7b.onrender.com"
-
+  config.hosts << /.*\.onrender\.com/
 end
